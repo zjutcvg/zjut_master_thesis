@@ -1,0 +1,48 @@
+%-------------------------------------------------
+% FileName: content.tex
+% Version: 0.1
+% Date: 2023-06-25
+% Description: 目录
+% Others: 如无需要，不用修改本文件
+% History: origin
+%-------------------------------------------------
+
+% 断页
+\clearpage
+% 加入书签, bm@contentsname要唯一
+\currentpdfbookmark{\contentsname}{bm@contentsname}
+% 生成目录
+
+\tableofcontents 
+
+% 断页
+\clearpage
+% 加入书签, bm@listfigurename要唯一
+\currentpdfbookmark{\listfigurename}{bm@listfigurename}
+\addcontentsline{toc}{chapter}{插图清单}
+% 生成图目录
+%\listoffigures
+{
+% 很弱智的，为每个图目录前加上 "图"
+\let\oldnumberline\numberline
+\renewcommand{\numberline}{\figurename~\oldnumberline}
+\listoffigures
+}
+
+
+% 断页
+\clearpage
+% 加入书签, bm@listtablename要唯一
+\currentpdfbookmark{\listtablename}{bm@listtablename}
+
+\addcontentsline{toc}{chapter}{附表清单}
+% 生成表目录
+ %\listoftables
+{
+% 很弱智的，为每个表目录前加上 "表"
+\let\oldnumberline\numberline
+\renewcommand{\numberline}{\tablename~\oldnumberline}
+\listoftables
+}
+
+

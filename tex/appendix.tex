@@ -1,0 +1,47 @@
+%-------------------------------------------------
+% FileName: appendix.tex
+% Version: 0.1
+% Date: 2023-06-25
+% Description: 附录
+% Others: 如果没有内容，就在main.tex中注释掉
+% History: origin
+%------------------------------------------------- 
+
+
+% 以下不用改动-------------------------------------
+% 断页
+% \clearpage
+
+
+
+% hyperef 精确定位
+% 设置一个anchor，主要针对\addcontentsline
+% 防止目录，书签等指向错误位置 
+% \phantomsection
+% 增加到目录，与chapter同级别
+% \addcontentsline{toc}{chapter}{\appendixname} 
+% \chapter*{} 表示不编号，不生成目录
+% \markboth 用于页眉
+% \chapter*{\appendixname \markboth{\appendixname}{}} 
+
+% appendix 用于附录章节的特殊编号 从A开始
+
+\newcommand{\name}{作者简介}
+
+% 附录章
+% 断页
+\clearpage
+% hyperef 精确定位
+% 设置一个anchor，主要针对\addcontentsline
+% 防止目录，书签等指向错误位置 
+\phantomsection
+%增加到目录，与chapter同级别
+\addcontentsline{toc}{chapter}{\name}
+% \chapter*{} 表示不编号，不生成目录
+% \markboth{}{} 用于页眉
+\chapter*{\name \markboth{\name}{}}
+
+% 修改以下内容---------------------------------
+此处为作者简介
+
+

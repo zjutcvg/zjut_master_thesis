@@ -1,0 +1,52 @@
+%-------------------------------------------------
+% FileName: chapt-2.tex
+% Version: 0.1
+% Date: 2023-06-25
+% Description: 第2章
+% Others: 
+% History: origin
+%------------------------------------------------- 
+
+% 断页
+% \clearpage
+\chapter{相关技术和理论基础}
+
+\section{技术与理论基础}
+介绍在系统的开发过程中所要用到的技术\cite{timmurphy}以及与系统相关的理论知识\cite{huwei2017latex2e}。
+
+\section{质能方程}
+% 行内公式，用两个$
+质能方程即描述质量与能量之间的当量关系的方程\cite{liuxiaopingwordandtex}。质能方程$e=mc^2$，$e$表示能量，$m$代表质量，而$c$则表示光速，由爱因斯坦提出\cite{yassin1994latex}。
+
+\section{牛顿力学}
+% 下面说明公式的引用。
+任何物体都要保持匀速直线运动或静止状态\cite{liu2013latex}，直到外力迫使它改变运动状态为止，见公式\eqref{eq:newton}。
+% 行间公式，用环境 equation
+% \label用于标注公式，在别处引用
+\begin{equation}\label{eq:newton}
+	\vec{F}=m\vec{a} 
+\end{equation}
+
+\section{勾股定理}
+勾股定理是一个基本的几何定理，指直角三角形的两条直角边的平方和等于斜边的平方，如方程\eqref{eq:pythagoraslaw}所示。中国古代称直角三角形为勾股形，并且直角边中较小者为勾，另一长直角边为股，斜边为弦，所以称这个定理为勾股定理，也有人称商高定理\cite{he2017mask}。
+\begin{equation}\label{eq:pythagoraslaw}
+    a^2 + b^2 = c^2  
+\end{equation}
+
+\section{线性代数}
+线性代数是数学的一个分支，它的研究对象是向量，向量空间（或称线性空间），线性变换和有限维的线性方程组。向量空间及其线性变换，以及与此相联系的矩阵（形如\eqref{eq:linearalgebra}）理论，构成了线性代数的中心内容。
+\begin{equation}\label{eq:linearalgebra}
+	\begin{pmatrix}
+		a_{11} & a_{12} & a_{13}\\ 
+		a_{21} & a_{22} & a_{23}\\  
+		a_{31} & a_{32} & a_{33}   
+	\end{pmatrix}  
+\end{equation}
+
+\section{量子力学}
+对于微观粒子的运动，可以用薛定谔方程来描述，
+\begin{equation}
+	\hat H \Psi = i \hbar \frac{\partial \Psi}{\partial t}
+\end{equation}
+其中$\hat H $为哈密顿算符，一般的从一个粒子的质量与这个粒子的势能函数，就可以得到这个方程，然后再根据给定的初值条件和边值条件，就可以解出我们需要的描述粒子运动状态的波函数来，然后波函数的绝对值平方就给出了粒子在一定时空位置的分布几率，这就是我们所能得到的关于粒子的最详尽的运动状态信息。
+

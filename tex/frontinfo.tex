@@ -1,0 +1,49 @@
+%-------------------------------------------------
+% FileName: frontinfo.tex
+% Version: 0.1
+% Date: 2023-06-25
+% Description: 封面
+% Others: 
+% History: origin
+%------------------------------------------------- 
+
+% 根据个人信息修改{}中的内容------------------------
+% 论文题目
+\mytitle{浙江工业大学\LaTeX{}论文模板设计与实现} 
+% 英文题目
+\myTITLE{Design and Implementation of \LaTeX{} Thesis of ZJUT}
+
+\fillAuthorCn{程航} %作者姓名
+\supervisor{郭老师} %指导教师姓名
+\supervisorTitle{副教授} %指导教师职称
+\fillMajor{计科}  %学科专业
+\fillAcademic{工程硕士} %学位类型
+\fillCultiviate{全日制专业学位硕士} %培养类型
+\fillCollege{计算机科学与技术学院} %所在学院
+
+\fillYear{2023}
+\fillMonth{06}
+\fillDay{07}
+
+\fillAuthorEn{Qiang Cheng} %第二页by后的姓名
+\supervisorEn{Dongyan Guo} %第二页的指导老师姓名
+\supervisorTitleEn{Prof.} %第二页的指导老师职称
+
+\fillresearchArea{目标跟踪} %研究方向
+\fillchairman{答辩主席的名字} %答辩主席的名字
+
+\fillMentorNameCn{郭老师}
+\fillMentorTitleCn{副教授}
+% 指导单位 
+% \institute{计算机学院} 
+% 完成时间 
+%\completedate{2020年4月19日} 
+
+% 以下不用改动-------------------------------------
+% 加入书签, bm@frontpage要唯一
+\currentpdfbookmark{\deffrontpage}{bm@frontpage}
+% 封面无页眉页脚
+\thispagestyle{empty}
+% 根据以上的参数 生成标题页
+\mymaketitle
+

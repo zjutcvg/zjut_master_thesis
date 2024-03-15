@@ -1,0 +1,33 @@
+%-------------------------------------------------
+% Contect: guodongyan@zjut.edu.cn
+% Github: 
+
+%-------------------------------------------------
+% 本模版1.0版本由程航两位同学在电子科大论文模版的基础上修改制作
+% 由于学校论文模版每年会有所变化，使用前请对照调整
+% 
+%-------------------------------------------------
+
+
+\documentclass{style/zjutthesis} % 自定义thesis
+
+\usepackage{setspace}
+
+\begin{document} 
+
+    \input{tex/frontinfo.tex}       % 封面
+    \input{tex/declaration.tex}     % 声明
+
+    \input{tex/abstract-ch.tex}     % 中文摘要
+    \input{tex/abstract-en.tex}     % 英文摘要
+    \input{tex/content.tex}         % 目录 (如无需要，不用修改)
+    \input{tex/chap-1.tex}          % 第1章
+    \input{tex/chap-2.tex}
+    \input{tex/chap-3.tex}          % 增加新章节到tex目录，此处input
+    \input{tex/chap-4.tex} 
+    \input{tex/chap-5.tex}
+    \input{tex/chap-6.tex}          % 第6章
+    \input{tex/reference.tex}       % 参考文献 (修改bib/ref.bib)
+    \input{tex/acknowledgement.tex} % 致谢
+    \input{tex/appendix.tex}        % 作者简介
+\end{document}

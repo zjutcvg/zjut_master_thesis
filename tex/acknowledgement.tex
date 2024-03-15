@@ -1,0 +1,30 @@
+%-------------------------------------------------
+% FileName: acknowledgement.tex
+% Version: 0.1
+% Date: 2023-06-25
+% Description: 致谢
+% Others: 
+% History: origin
+%------------------------------------------------- 
+
+% 以下不用改动-------------------------------------
+% 断页
+\clearpage
+% hyperef 精确定位
+% 设置一个anchor，主要针对\addcontentsline
+% 防止目录，书签等指向错误位置 
+\phantomsection
+%增加到目录，与chapter同级别
+\addcontentsline{toc}{chapter}{\defacknowledgement}
+% \chapter*{} 表示不编号，不生成目录
+% \markboth{}{} 用于页眉
+\chapter*{\defacknowledgement \markboth{\defacknowledgement}{}}
+
+% 修改以下内容---------------------------------
+% 设置行距1.5
+{\linespread{1.5} \selectfont 简述自己通过毕业设计（论文）的体会，向给予指导、合作、支持及协助完成研究工作的单位、组织或个人致谢。致谢的文字虽不多，却是论文不可缺少的内容。内容应简洁明了、实事求是，避免俗套。
+
+第二段致谢。
+
+第三段致谢。\par} %\par 强制换行，使得行距生效
+

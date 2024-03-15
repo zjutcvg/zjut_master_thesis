@@ -1,0 +1,250 @@
+%-------------------------------------------------
+% FileName: zsccode.sty
+% Version: 0.1
+% Date: 2023-06-25
+% Description: 导言区
+% Others: 如无需要，不用修改本文件
+% History: origin 0.1
+%------------------------------------------------- 
+
+% latex 版本
+\NeedsTeXFormat{LaTeX2e}
+
+% 本文件提供的cls的名字，版本
+\ProvidesClass{zsccode}[2023/06/25 version 0.1]
+
+
+% 代码高亮宏包
+\RequirePackage{listings}
+\RequirePackage{color}
+
+% 设置代码的默认样式
+\lstset{
+    % frame=none,% 取消边框
+    % numbers=left,
+    frame = single, 
+    breaklines=true,% 允许自动断行
+    % breakatwhitespace=true,% 使用此命令仅允许在空格处自动断行
+    showstringspaces=false,% 不显示字符串中的空格
+    basicstyle=\small\ttfamily,% 设置代码基本样式
+    flexiblecolumns=true,% 改善字母间距
+    % numberstyle= \color{blue},
+    numberstyle=\color[RGB]{230, 32, 32},
+    % keywordstyle=\color{blue},% 设置关键词样式
+    keywordstyle=\color[RGB]{142, 29, 161},% 设置关键词样式
+    % stringstyle=\color[rgb]{0.75,0,0.75},% 设置字符串样式
+    stringstyle=\color[RGB]{81, 150, 87},% 设置字符串样式
+    % commentstyle=\songti\color[rgb]{0,0.5,0},% 设置注释样式
+    commentstyle=\color[RGB]{126, 54, 72},% 设置注释样式
+    tabsize=4,% 设置制表符缩进
+    xleftmargin=6pt,
+    xrightmargin=6pt,
+    % framexleftmargin=-1pt,
+    % framexrightmargin=-1pt,
+}
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+% 自定义JavaScript
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
+
+% tagstyle
+
+% "comments": "#7e3648",  126, 54, 72
+% "strings": "#519657",   81, 150, 87
+% "keywords": "#8e1da1",  142, 29, 161
+% "numbers": "#e62020",  230, 32, 32
+
+% 设置c代码环境 Objective, Sharp
+\lstnewenvironment{clan}[1][]{
+	\lstset{
+		language=C,
+		% keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		% morekeywords={as},% 将特定单词加入Kewords中
+		% deletekeywords={print},%从 keywords中去除特定单词
+		% keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		% morekeywords=[2]{print},% 将特定单词加入Builtins中
+		% stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		% commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+
+% 设置matlab代码环境
+\lstnewenvironment{matlab}[1][]{
+	\lstset{
+		language=Matlab,
+		% deletekeywords={disp},% 可在此行去除特定关键词的语法高亮		
+		keywordstyle=\color{blue},% 设置关键词样式
+		stringstyle=\color[rgb]{0.75,0,0.75},% 设置字符串样式
+		commentstyle=\songti\color[rgb]{0,0.5,0},% 设置注释样式
+		#1
+	}
+}{}
+
+% 设置python代码环境
+\lstnewenvironment{python}[1][]{
+	\lstset{
+		language=Python,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+% 设置java代码环境
+\lstnewenvironment{java}[1][]{
+	\lstset{
+		language=Java,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+% 设置javascript代码环境
+\lstnewenvironment{javascript}[1][]{
+	\lstset{
+		language=JavaScript,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+% 设置cpp代码环境
+\lstnewenvironment{cpp}[1][]{
+	\lstset{
+		language=C++,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+
+
+% 设置html代码环境
+\lstnewenvironment{html}[1][]{
+	\lstset{
+		language=HTML,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+% Go
+\lstnewenvironment{gogo}[1][]{
+	\lstset{
+		language=Go,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
+% SQL
+\lstnewenvironment{sql}[1][]{
+	\lstset{
+		language=SQL,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+% PHP
+\lstnewenvironment{php}[1][]{
+	\lstset{
+		language=PHP,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+% XML
+\lstnewenvironment{xml}[1][]{
+	\lstset{
+		language=XML,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+% TeX
+\lstnewenvironment{tex}[1][]{
+	\lstset{
+		language=TeX,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
